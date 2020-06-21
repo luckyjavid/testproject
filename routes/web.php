@@ -24,11 +24,27 @@ use Illuminate\Http\Request;
 ------------------------------------------------------------------------
 | Todos Routes
 |--------------------------------------------------------------------------
+| this command will create all the functions 
+| related to routes in TodoController:
+| php artisan make:controller TodoController --resource
 */
-Route::get('todos','TodoController@index');
-Route::get('todos/create','TodoController@create');
-Route::post('todos/create','TodoController@store');
-Route::get('todos/edit','TodoController@edit');
+Route::resource('todo', 'TodoController');
+
+/**
+ * one way to apply middleware
+ * Route::resource('todo', 'TodoController')->middleware("auth");
+ */
+
+// Route::get('todos','TodoController@index')->name('todo.index');
+// Route::get('todos/create','TodoController@create');
+// Route::post('todos/create','TodoController@store');
+// // Route::get('todos/{id}/edit','TodoController@edit');
+// Route::get('todos/{todo}/edit','TodoController@edit'); #route model binding
+// Route::patch('todos/{todo}/update','TodoController@update')->name('todo.update');
+// Route::delete('todos/{todo}/delete','TodoController@delete')->name('todo.delete');
+
+Route::put('todos/{todo}/complete','TodoController@complete')->name('todo.complete');
+Route::put('todos/{todo}/incomplete','TodoController@incomplete')->name('todo.incomplete');
 
 
 

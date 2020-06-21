@@ -77,4 +77,11 @@ class User extends Authenticatable
 			Storage::delete('public/images/'.$this->avatar);
 		}
 	}
+	/**
+	 * creating one-to-many relationship
+	 */
+	public function todos()
+	{
+		return $this->hasMany(Todo::class,'user_id');
+	}
 }

@@ -11,12 +11,7 @@ use Auth;
 class UserController extends Controller
 {
 	public function index()
-						    {
-		
-		
-		
-		
-		
+	{
 		
 		/* The old way of doing it */
 		// 		DB::insert('insert into users (name,email,password) values (?, ?,?)', ['javid', 'j@gmail.com','password']);
@@ -24,13 +19,7 @@ class UserController extends Controller
 		// 		DB::delete('delete from users where name = "javid Hussain"');
 		// 		$users = DB::select('select * from users ');
 		// 		return $users;
-		
-		
-		
-		
-		
-		
-		
+
 		/* using eloquent */
 		// 		$user = new User();
 		// 		// 		dd($user);
@@ -44,12 +33,7 @@ class UserController extends Controller
 		// 		$user = User::all();
 		// 		return $user;
 		
-		
-		
-		
-		
-		
-		
+
 		/* using eloquent one line method */
 		$user = new User();
 		$data = [

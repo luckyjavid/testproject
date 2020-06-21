@@ -10,6 +10,7 @@
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
+                            
                         </div>
                     @endif
 
@@ -18,11 +19,13 @@
                     <x-alert>
                         <p>Response from image Upload goes here</p>
                     </x-alert>
+                    <a href='{{ route('todo.index') }}'> Todo App</a>
                 </div>
             </div>
         </div>
     </div>
     <br>
+    
     <div class="row justify-content-center">
     <div class="col-md-8">
     <div class="card">
